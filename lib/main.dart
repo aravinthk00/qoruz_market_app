@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'package:qoruz_market_app/core/app_theme.dart';
@@ -6,6 +7,11 @@ import 'package:qoruz_market_app/screens/main_navigation_screen.dart';
 import 'providers/marketplace_provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
   runApp(MyApp());
 }
 
